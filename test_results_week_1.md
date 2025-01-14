@@ -8,7 +8,7 @@
 
 ## 3-Hour Timeframe
 - Timeframe: 2022-04-01 12 to 2022-04-01 15
-- Execution Time: 
+- Execution Time: 790.2 seconds = 13 minutes and 10 seconds
 - Most Placed Color: #000000
 - Most Placed Pixel Coordinate: (0,0)
 
