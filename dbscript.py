@@ -15,25 +15,17 @@ def parseCSV(startTime, endTime):
         for line in file:
             if(lineNum > 0):
                 entry = line.strip()
-                # print(entry)
                 columnArray = entry.split(",")
                 timeCol = columnArray[0]
                 timeCol = timeCol.split(" UTC")
-                # print(timeCol[0])
                 timestamp = 0
                 try: 
                     timestamp = datetime.datetime.strptime(timeCol[0], '%Y-%m-%d %H:%M:%S.%f').timestamp()
                 except:
                     timestamp = datetime.datetime.strptime(timeCol[0], '%Y-%m-%d %H:%M:%S').timestamp()
-                # print("Time " + str(timestamp))
-                # print("Start Time " + str(startTime))
-                # print("End Time " + str(endTime))
                 if(timestamp >= startTime and timestamp <= endTime):
-                    print("HEREHREHERE")
                     color = columnArray[2]
-                    print(color)
                     pixel = columnArray[3] + "," + columnArray[4]
-                    print(pixel)
                     numColorOccurances = colorAndOccurances.get(color, 0) + 1
                     if(numColorOccurances > maxColorAndOccurances[1]):
                         maxColorAndOccurances = (color, numColorOccurances)
@@ -68,7 +60,6 @@ def main():
         endDateTime = datetime.datetime.strptime(endTime, '%Y-%m-%d %H').timestamp()
         print(endDateTime)
         if(startDateTime < endDateTime):
-            print("Date is correct")
             parseCSV(startTime=startDateTime, endTime=endDateTime)
         else:
             print("end time is before start time")
