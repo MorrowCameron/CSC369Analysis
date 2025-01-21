@@ -72,3 +72,6 @@ The process took 405004791ns to complete
 The most common color was #000000 which occured 1068290 times.
 #### Most used Coordinate:
 The most common coordinate pair was 859,766 which occured 5614 times.
+
+## Takeaways
+I found duckdb to be easiest to use due to my experience with SQL allowing me to feel I had the best range of options to analyze the data. Additionally, the lack of memory issues was very nice, as both pandas and polar required me to use an external library (pyarrow for pandas) or lazy load the data in order to not crash the program. That being said, pandas and polars were both very nice for quick variations on data locally, with extremely nice built in formatting and useful methods. This was obviously much faster than my initial implementation, but I also converted my file to parquet, which had an additional impact on runtime.
